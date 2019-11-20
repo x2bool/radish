@@ -1,0 +1,5 @@
+Add:
+dotnet ef migrations add [MigrationName] --startup-project ../Rbmk.Radish/Rbmk.Radish.csproj
+
+Update:
+dotnet ef database update --startup-project ../Rbmk.Radish/Rbmk.Radish.csproj

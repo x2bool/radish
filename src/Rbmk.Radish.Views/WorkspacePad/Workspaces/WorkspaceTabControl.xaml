@@ -1,0 +1,72 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.WorkspacePad.Workspaces.WorkspaceTabControl">
+    
+    <Border>
+        <Grid
+            ColumnDefinitions="auto,auto,auto"
+            RowDefinitions="*">
+                                
+            <Button
+                Classes="MacosOnly"
+                Grid.Column="0"
+                Command="{Binding Tab.CloseCommand}"
+                CommandParameter="{Binding}">
+                
+                <Button.Styles>
+                    <Style Selector="Button">
+                        <Setter Property="Background" Value="#00000000" />
+                        <Setter Property="BorderThickness" Value="0" />
+                    </Style>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="#20000000" />
+                    </Style>
+                    <Style Selector="Button:disabled">
+                        <Setter Property="Opacity" Value="0" />
+                    </Style>
+                </Button.Styles>
+                
+                <Image
+                    Width="14"
+                    Height="14"
+                    Opacity="0.6"
+                    Source="resm:Rbmk.Radish.Views.Icons.X24.Close.png" />
+                
+            </Button>
+                                
+            <TextBlock
+                Grid.Column="1"
+                Text="{Binding Tab.Title}" />
+                 
+            <Button
+                Classes="WindowsOnly"
+                Grid.Column="2"
+                Command="{Binding Tab.CloseCommand}"
+                CommandParameter="{Binding}">
+                
+                <Button.Styles>
+                    <Style Selector="Button">
+                        <Setter Property="Background" Value="#00000000" />
+                        <Setter Property="BorderThickness" Value="0" />
+                    </Style>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="#20000000" />
+                    </Style>
+                    <Style Selector="Button:disabled">
+                        <Setter Property="Opacity" Value="0" />
+                    </Style>
+                </Button.Styles>
+                
+                <Image
+                    Width="14"
+                    Height="14"
+                    Opacity="0.6"
+                    Source="resm:Rbmk.Radish.Views.Icons.X24.Close.png" />
+                
+            </Button>
+            
+        </Grid>
+    </Border>
+    
+</UserControl>

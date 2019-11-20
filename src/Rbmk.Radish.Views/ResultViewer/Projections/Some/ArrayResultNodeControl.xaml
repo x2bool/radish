@@ -1,0 +1,28 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ResultViewer.Projections.Some.ArrayResultNodeControl"
+    Padding="0,2">
+    
+    <StackPanel Orientation="Horizontal" Spacing="4">
+        
+        <Image
+            VerticalAlignment="Center"
+            Classes="Icon"
+            Source="resm:Rbmk.Radish.Views.Icons.X32.Array.png" />
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Text="{Binding FormattedOrdinal}" />
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Text="Array" />
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Text="{Binding FormattedLength}" />
+        
+    </StackPanel>
+    
+</UserControl>

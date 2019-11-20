@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<SyntaxDefinition
+        name="Redis"
+        xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+    <Color name="Digit" foreground="#78aebe" exampleText="3.14" />
+    <Color name="String" foreground="#78aebe" exampleText="&quot;Hello, World!&quot;" />
+    <Color name="Keyword" foreground="#234466" exampleText="GET" />
+
+    <RuleSet ignoreCase="true">
+
+        <!-- Transactions -->
+
+        <Rule color="Keyword">^\s*multi(\s|$)</Rule>
+        <Rule color="Keyword">^\s*exec(\s|$)</Rule>
+        <Rule color="Keyword">^\s*discard(\s|$)</Rule>
+        
+        <!-- Values -->
+
+        <Rule color="Digit">(\b\d+(\.[0-9]+)?|\.[0-9]+)([eE][+-]?[0-9]+)?</Rule>
+
+        <Span color="String" multiline="false">
+            <Begin>"</Begin>
+            <End>"</End>
+            <RuleSet>
+                <Span begin="\\" end="." />
+            </RuleSet>
+        </Span>
+        
+        <!-- Keys -->
+        
+        <Rule color="Keyword">^\s*keys(\s|$)</Rule>
+        <Rule color="Keyword">^\s*scan(\s|$)</Rule>
+        
+        <!-- Strings -->
+        
+        <Rule color="Keyword">^\s*get(\s|$)</Rule>
+        <Rule color="Keyword">^\s*mget(\s|$)</Rule>
+        <Rule color="Keyword">^\s*set(\s|$)</Rule>
+        <Rule color="Keyword">^\s*mset(\s|$)</Rule>
+        
+        <!-- Lists -->
+
+        <Rule color="Keyword">^\s*lindex(\s|$)</Rule>
+        <Rule color="Keyword">^\s*linsert(\s|$)</Rule>
+        <Rule color="Keyword">^\s*llen(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lpop(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lpush(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lpushx(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lrange(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lrem(\s|$)</Rule>
+        <Rule color="Keyword">^\s*rpop(\s|$)</Rule>
+        <Rule color="Keyword">^\s*rpoplpush(\s|$)</Rule>
+        <Rule color="Keyword">^\s*rpush(\s|$)</Rule>
+        <Rule color="Keyword">^\s*rpushx(\s|$)</Rule>
+        <Rule color="Keyword">^\s*lset(\s|$)</Rule>
+        <Rule color="Keyword">^\s*ltrim(\s|$)</Rule>
+        
+        <!-- Sets -->
+
+        <Rule color="Keyword">^\s*sscan(\s|$)</Rule>
+        <Rule color="Keyword">^\s*sadd(\s|$)</Rule>
+        <Rule color="Keyword">^\s*srem(\s|$)</Rule>
+        
+        <!-- Sorted Sets -->
+
+        <Rule color="Keyword">^\s*zscan(\s|$)</Rule>
+        <Rule color="Keyword">^\s*zadd(\s|$)</Rule>
+        <Rule color="Keyword">^\s*zrem(\s|$)</Rule>
+        
+        <!-- Hashes -->
+
+        <Rule color="Keyword">^\s*hscan(\s|$)</Rule>
+        
+    </RuleSet>
+    
+</SyntaxDefinition>

@@ -1,0 +1,20 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.Themes.MacosTheme">
+    
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.SharedStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.CheckBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.ButtonStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.NotificationStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.DataGridStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.GridSplitterStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.ProgressBarStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.ComboBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.TextBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.TextEditorStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.TabStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.GridStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Macos.AutoCompleteBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+
+</Styles>

@@ -1,0 +1,61 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="GridSplitter.Resizer:vertical">
+        <Setter Property="Width" Value="5" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="5" Background="#e5e5e5" BorderThickness="2,0" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Margin" Value="-2,0,-2,0" />
+    </Style>
+    
+    <Style Selector="GridSplitter.Resizer:horizontal">
+        <Setter Property="Height" Value="5" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Height="5" Background="#e5e5e5" BorderThickness="0,2" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Margin" Value="0,-2,0,-2" />
+    </Style>
+    
+    <Style Selector="GridSplitter.Invisible:vertical">
+        <Setter Property="Width" Value="5" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="5" Background="Transparent" BorderThickness="2,0" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Margin" Value="-2,0,-2,0" />
+    </Style>
+    
+    <Style Selector="GridSplitter.Invisible:horizontal">
+        <Setter Property="Height" Value="5" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Height="5" Background="Transparent" BorderThickness="0,2" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Margin" Value="0,-2,0,-2" />
+    </Style>
+    
+    <Style Selector="GridSplitter.Pivotal:vertical">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="5" Background="#adaeae" BorderThickness="2,0" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    
+    <Style Selector="GridSplitter.Pivotal:horizontal">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Height="5" Background="#adaeae" BorderThickness="0,2" BorderBrush="Transparent" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    
+</Styles>

@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.8.999-cibuild0004376-beta" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.8.999-cibuild0004376-beta" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.8.999-cibuild0004376-beta" />
+        <PackageReference Include="Avalonia.Native" Version="0.8.999-cibuild0004376-beta" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.8.999-cibuild0004376-beta" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+        <PackageReference Include="ReactiveUI" Version="10.3.6" />
+        <PackageReference Include="System.Reactive" Version="4.1.6" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <EmbeddedResource Include="**\*.xshd" />
+        <EmbeddedResource Include="**\*.png" />
+        <EmbeddedResource Include="**\*.ttf" />
+        <EmbeddedResource Include="**\*.otf" />
+        <Compile Update="**\*.xaml.cs">
+            <DependentUpon>%(Filename)</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="**\*.xaml">
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Update="Commander\StructViewer\Projections\Hashes\HashStructProjectionControl.xaml.cs">
+          <DependentUpon>HashStructProjectionControl.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Commander\StructViewer\Projections\Lists\ListStructProjectionControl.xaml.cs">
+          <DependentUpon>ListStructProjectionControl.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Commander\StructViewer\Projections\Strings\StringStructProjectionControl.xaml.cs">
+          <DependentUpon>StringStructProjectionControl.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="Dialogs\ConfirmDialog\ConfirmDialogWindow.xaml.cs">
+          <DependentUpon>ConfirmDialogWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="LicenseDialog\LicenseDialogWindow.xaml.cs">
+          <DependentUpon>LicenseDialogWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="SettingsDialog\SettingsDialogWindow.xaml.cs">
+          <DependentUpon>SettingsDialogWindow.xaml</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\ext\AvaloniaEdit\src\AvaloniaEdit\AvaloniaEdit.csproj" />
+        <ProjectReference Include="..\Rbmk.Radish.Model\Rbmk.Radish.Model.csproj" />
+        <ProjectReference Include="..\Rbmk.Utils\Rbmk.Utils.csproj" />
+    </ItemGroup>
+
+</Project>

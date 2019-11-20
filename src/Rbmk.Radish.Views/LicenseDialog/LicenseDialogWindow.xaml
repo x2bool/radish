@@ -1,0 +1,86 @@
+﻿<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.LicenseDialog.LicenseDialogWindow"
+    Icon="resm:Rbmk.Radish.Views.Icons.radish.png"
+    WindowStartupLocation="CenterOwner"
+    SizeToContent="WidthAndHeight"
+    MinWidth="420"
+    MinHeight="320"
+    Classes="Dialog"
+    Title="License activation"
+    Padding="14,12">
+    
+    <Grid
+        Classes="ConfirmDialog"
+        ColumnDefinitions="auto,6,*,6,auto"
+        RowDefinitions="auto,8,*,8,auto">
+        
+        <Button
+            Classes="Link"
+            Command="{Binding GetLicenseCommand}"
+            Grid.Row="0"
+            Grid.Column="0">
+            <TextBlock
+                Text="Get license" />
+        </Button>
+        
+        <Button
+            Classes="Secondary"
+            Command="{Binding OpenCommand}"
+            Grid.Row="0"
+            Grid.Column="4">
+            <TextBlock
+                Text="Open…" />
+        </Button>
+        
+        <TextBox
+            Classes="Editor"
+            IsEnabled="False"
+            Text="{Binding LicenseInfo}"
+            Watermark="No active subscription found"
+            Grid.Row="2"
+            Grid.ColumnSpan="5" />
+        
+        <StackPanel
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="5"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            
+            <Button
+                Classes="Secondary MacosOnly"
+                Command="{Binding TryForFreeCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Try for free" />
+            </Button>
+        
+            <Button
+                Classes="Primary MacosOnly"
+                Command="{Binding ActivateCommand}">
+                <TextBlock
+                    Text="Activate" />
+            </Button>
+        
+            <Button
+                Classes="Primary WindowsOnly"
+                Command="{Binding ActivateCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Activate" />
+            </Button>
+            
+            <Button
+                Classes="Secondary WindowsOnly"
+                Command="{Binding TryForFreeCommand}">
+                <TextBlock
+                    Text="Try for free" />
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>

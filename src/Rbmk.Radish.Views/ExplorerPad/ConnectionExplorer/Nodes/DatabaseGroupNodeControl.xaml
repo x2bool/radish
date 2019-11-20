@@ -1,0 +1,25 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer.Nodes.DatabaseGroupNodeControl"
+    Padding="0,2">
+    
+    <Grid
+        RowDefinitions="auto"
+        ColumnDefinitions="auto,4,*">
+        
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            Classes="Icon"
+            Source="resm:Rbmk.Radish.Views.Icons.X32.Database.png" />
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            Text="Databases" />
+        
+    </Grid>
+    
+</UserControl>

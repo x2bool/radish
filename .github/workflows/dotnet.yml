@@ -1,0 +1,96 @@
+name: Publish
+
+on:
+  push:
+    branches: master
+
+jobs:
+
+  build-win:
+    runs-on: windows-2016
+    steps:
+    - uses: actions/checkout@v1
+    - name: checkout submodules
+      run: git submodule update --init --recursive
+    - name: setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: build project
+      shell: pwsh
+      run: dotnet build src/Rbmk.Radish -c Release --version-suffix "$(git rev-list --count HEAD)"
+    - name: publish x64 exe
+      shell: pwsh
+      run: dotnet publish src/Rbmk.Radish/Rbmk.Radish.csproj -c Release -r win-x64 -p:VersionSuffix="$(git rev-list --count HEAD)"
+    - name: publish x86 exe
+      shell: pwsh
+      run: dotnet publish src/Rbmk.Radish/Rbmk.Radish.csproj -c Release -r win-x86 -p:VersionSuffix="$(git rev-list --count HEAD)"
+    - name: download nsis
+      shell: pwsh
+      run: |
+        Invoke-WebRequest -Uri https://github.com/rbmkio/nsis/raw/master/nsis.zip -OutFile $env:GITHUB_WORKSPACE\build\nsis\nsis.zip
+        Expand-Archive -Path $env:GITHUB_WORKSPACE\build\nsis\nsis.zip -DestinationPath $env:GITHUB_WORKSPACE\build\nsis
+    - name: build nsis
+      shell: pwsh
+      run: |
+        copy $env:GITHUB_WORKSPACE\build\nsis\64bit\installer.nsi $env:GITHUB_WORKSPACE\src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x64\publish
+        copy $env:GITHUB_WORKSPACE\build\nsis\32bit\installer.nsi $env:GITHUB_WORKSPACE\src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x86\publish
+        & $env:GITHUB_WORKSPACE\build\nsis\makensis.exe $env:GITHUB_WORKSPACE\src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x64\publish\installer.nsi
+        & $env:GITHUB_WORKSPACE\build\nsis\makensis.exe $env:GITHUB_WORKSPACE\src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x86\publish\installer.nsi
+    - name: upload x64 artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: exe-x64
+        path: src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x64\publish\radish-setup.exe
+    - name: upload x86 artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: exe-x86
+        path: src\Rbmk.Radish\bin\Release\netcoreapp3.0\win-x86\publish\radish-setup.exe
+
+  build-mac:
+    runs-on: macOS-10.14
+    steps:
+    - uses: actions/checkout@v1
+    - name: checkout submodules
+      run: git submodule update --init --recursive
+    - name: setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: build project
+      run: dotnet build src/Rbmk.Radish -c Release --version-suffix "$(git rev-list --count HEAD)"
+    - name: bundle app
+      run: dotnet msbuild src/Rbmk.Radish/Rbmk.Radish.csproj -t:BundleApp -p:Configuration=Release -p:RuntimeIdentifier=osx-x64 -p:VersionSuffix="$(git rev-list --count HEAD)"
+    - name: build dmg
+      run: |
+        cd build/dmg-builder
+        ./build-dmg $GITHUB_WORKSPACE/src/Rbmk.Radish/bin/Release/netcoreapp3.0/osx-x64/publish/Radish.app
+    - name: upload artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: dmg
+        path: build/dmg-builder/Radish.dmg
+
+  build-linux:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: checkout submodules
+      run: git submodule update --init --recursive
+    - name: setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: build project
+      run: dotnet build src/Rbmk.Radish -c Release --version-suffix "$(git rev-list --count HEAD)"
+    - name: publish app
+      run: dotnet publish src/Rbmk.Radish/Rbmk.Radish.csproj -c Release -r linux-x64 --version-suffix "$(git rev-list --count HEAD)"
+    - name: tar gz
+      run: |
+        tar -cvzf radish.tar.gz -C $GITHUB_WORKSPACE/src/Rbmk.Radish/bin/Release/netcoreapp3.0/linux-x64/publish radish
+    - name: upload artifacts
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: targz-x64
+        path: radish.tar.gz

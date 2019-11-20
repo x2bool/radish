@@ -1,0 +1,49 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ExplorerPad.ExplorerPadControl"
+    xmlns:fileExplorer="clr-namespace:Rbmk.Radish.Views.FileExplorer;assembly=Rbmk.Radish.Views"
+    xmlns:connectionExplorer="clr-namespace:Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer">
+    
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="auto,*">
+        
+        <Border
+            Classes="ControlPanel"
+            Grid.Column="0"
+            Grid.Row="0">
+            
+            <Grid
+                ColumnDefinitions="*,auto">
+            
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Command="{Binding OpenSettingsCommand}">
+                    <Image
+                        Width="14"
+                        Height="14"
+                        Opacity="0.6"
+                        Source="resm:Rbmk.Radish.Views.Icons.X28.Settings.png" />
+                </Button>
+            
+            </Grid>
+            
+        </Border>
+        
+        <Border
+            Classes="ExplorerPanel"
+            Grid.Column="0"
+            Grid.Row="1">
+            
+            <connectionExplorer:ConnectionExplorerControl
+                DataContext="{Binding ConnectionExplorer}" />
+            
+        </Border>
+        
+    </Grid>
+    
+</UserControl>

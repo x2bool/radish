@@ -1,0 +1,37 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ResultViewer.Projections.Some.ValueResultNodeControl"
+    Padding="0,2">
+    
+    <StackPanel Orientation="Horizontal" Spacing="4">
+        
+        <Image
+            IsVisible="{Binding !IsNull}"
+            VerticalAlignment="Center"
+            Classes="Icon"
+            Source="resm:Rbmk.Radish.Views.Icons.X32.Value.png" />
+        
+        <Image
+            IsVisible="{Binding IsNull}"
+            VerticalAlignment="Center"
+            Classes="Icon"
+            Source="resm:Rbmk.Radish.Views.Icons.X32.Null.png" />
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Text="{Binding FormattedOrdinal}" />
+        
+        <TextBlock
+            IsVisible="{Binding !IsNull}"
+            VerticalAlignment="Center"
+            Text="{Binding Value}" />
+        
+        <TextBlock
+            IsVisible="{Binding IsNull}"
+            VerticalAlignment="Center"
+            Text="(null)" />
+        
+    </StackPanel>
+    
+</UserControl>

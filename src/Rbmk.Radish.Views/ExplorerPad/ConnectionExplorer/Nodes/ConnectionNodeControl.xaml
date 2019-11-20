@@ -1,0 +1,80 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer.Nodes.ConnectionNodeControl"
+    Padding="0,2">
+    
+    <Grid
+        RowDefinitions="auto"
+        ColumnDefinitions="auto,4,auto,*">
+        
+        <Panel
+            Grid.Row="0"
+            Grid.Column="0"
+            Width="16"
+            Height="16">
+            
+            <Image
+                Classes="Icon"
+                IsVisible="{Binding IsOpen}"
+                Source="resm:Rbmk.Radish.Views.Icons.X32.Connected.png" />
+        
+            <Image
+                Classes="Icon"
+                IsVisible="{Binding !IsOpen}"
+                Source="resm:Rbmk.Radish.Views.Icons.X32.Disconnected.png" />
+            
+            <Image
+                Classes="Indicator"
+                IsVisible="{Binding IsOpen}"
+                Source="resm:Rbmk.Radish.Views.Icons.X16.StatusGreen.png" />
+            
+        </Panel>
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            Text="{Binding ConnectionDisplayName}" />
+        
+        <Grid.ContextMenu>
+            <ContextMenu>
+                
+                <MenuItem
+                    IsVisible="{Binding !IsOpen}"
+                    Command="{Binding ReconnectCommand}"
+                    Header="Connect">
+                    <MenuItem.Icon>
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Connected.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <MenuItem
+                    IsVisible="{Binding IsOpen}"
+                    Command="{Binding DisconnectCommand}"
+                    Header="Disconnect">
+                    <MenuItem.Icon>
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Disconnected.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <MenuItem
+                    Command="{Binding CloseCommand}"
+                    Header="Delete">
+                    <MenuItem.Icon>
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Remove.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+            </ContextMenu>
+        </Grid.ContextMenu>
+        
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,73 @@
+﻿<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ConfirmDialog.ConfirmDialogWindow"
+    Icon="resm:Rbmk.Radish.Views.Icons.radish.png"
+    WindowStartupLocation="CenterOwner"
+    SizeToContent="WidthAndHeight"
+    MinWidth="320"
+    MinHeight="104"
+    Classes="Dialog"
+    Title="{Binding TitleText}"
+    Padding="14,12">
+    
+    <Grid
+        Classes="ConfirmDialog"
+        ColumnDefinitions="auto,8,auto,*"
+        RowDefinitions="auto,8,auto,*">
+        
+        <Image
+            Classes="DialogIcon"
+            VerticalAlignment="Top"
+            Grid.Row="0"
+            Grid.Column="0"
+            Source="resm:Rbmk.Radish.Views.Icons.X96.Attention.png?assembly=Rbmk.Radish.Views" />
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Classes="DialogTitle"
+            Text="{Binding MessageText}" />
+        
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            
+            <Button
+                Classes="Secondary MacosOnly"
+                Command="{Binding CancelCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="{Binding CancelText}" />
+            </Button>
+    
+            <Button
+                Classes="Primary MacosOnly"
+                Command="{Binding ConfirmCommand}">
+                <TextBlock
+                    Text="{Binding ConfirmText}" />
+            </Button>
+    
+            <Button
+                Classes="Primary WindowsOnly"
+                Command="{Binding ConfirmCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="{Binding ConfirmText}" />
+            </Button>
+        
+            <Button
+                Classes="Secondary WindowsOnly"
+                Command="{Binding CancelCommand}">
+                <TextBlock
+                    Text="{Binding CancelText}" />
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>

@@ -1,0 +1,120 @@
+﻿<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ConnectDialog.ConnectDialogWindow"
+    Icon="resm:Rbmk.Radish.Views.Icons.radish.png"
+    WindowStartupLocation="CenterOwner"
+    SizeToContent="WidthAndHeight"
+    MinWidth="320"
+    MinHeight="160"
+    Classes="Dialog"
+    Title="Connect"
+    Padding="14,12">
+    
+    <Grid
+        Classes="ConnectDialog"
+        ColumnDefinitions="auto,8,auto,8,*"
+        RowDefinitions="auto,8,auto,8,auto,14,auto,*">
+        
+        <Image
+            Classes="DialogIcon"
+            VerticalAlignment="Top"
+            Grid.Row="0"
+            Grid.RowSpan="8"
+            Grid.Column="0"
+            Source="resm:Rbmk.Radish.Views.Icons.X96.Connect.png?assembly=Rbmk.Radish.Views" />
+        
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            Orientation="Vertical">
+            
+            <TextBlock
+                Classes="DialogTitle"
+                IsVisible="{Binding !HasError}"
+                Text="Enter one or more servers" />
+            
+            <TextBlock
+                Classes="Error"
+                IsVisible="{Binding HasError}"
+                Text="Could not connect" />
+            
+            <ProgressBar
+                Classes="Progress"
+                IsEnabled="{Binding InProgress}"
+                IsIndeterminate="{Binding InProgress}"
+                Margin="0,8" />
+            
+        </StackPanel>
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="60"
+            Text="Name:" />
+        
+        <TextBox
+            Classes="Input"
+            Grid.Row="2"
+            Grid.Column="4"
+            Watermark="optional"
+            Text="{Binding ConnectionName, Mode=TwoWay}" />
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Grid.Row="4"
+            Grid.Column="2"
+            Width="60"
+            Text="Server(s):" />
+        
+        <TextBox
+            Classes="Input"
+            Grid.Row="4"
+            Grid.Column="4"
+            Watermark="localhost:6379"
+            Text="{Binding ConnectionString, Mode=TwoWay}" />
+        
+        <StackPanel
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            
+            <Button
+                Classes="Secondary MacosOnly"
+                Command="{Binding CancelCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Close" />
+            </Button>
+        
+            <Button
+                Classes="Primary MacosOnly"
+                Command="{Binding ConnectCommand}">
+                <TextBlock
+                    Text="Connect" />
+            </Button>
+        
+            <Button
+                Classes="Primary WindowsOnly"
+                Command="{Binding ConnectCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Connect" />
+            </Button>
+            
+            <Button
+                Classes="Secondary WindowsOnly"
+                Command="{Binding CancelCommand}">
+                <TextBlock
+                    Text="Close" />
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>

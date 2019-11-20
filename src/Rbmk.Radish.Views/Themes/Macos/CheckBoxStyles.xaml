@@ -1,0 +1,65 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="CheckBox.Checker">
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#bebebe"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="Auto,*">
+                  <Border Name="border"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          Width="15"
+                          Height="15"
+                          CornerRadius="3"
+                          VerticalAlignment="Center">
+                    <Panel>
+                      <Path Name="checkMark"
+                            Fill="{TemplateBinding Foreground}"
+                            Width="11"
+                            Height="10"
+                            Stretch="Uniform"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 1145.607177734375,430 C1145.607177734375,430 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1138,434.5538330078125 1138,434.5538330078125 1138,434.5538330078125 1141.482177734375,438 1141.482177734375,438 1141.482177734375,438 1141.96875,437.9375 1141.96875,437.9375 1141.96875,437.9375 1147,431.34619140625 1147,431.34619140625 1147,431.34619140625 1145.607177734375,430 1145.607177734375,430 z"/>
+                      <Rectangle Name="indeterminateMark"
+                                 Fill="{TemplateBinding Foreground}"
+                                 Width="10"
+                                 Height="10"
+                                 Stretch="Uniform"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"/>
+                    </Panel>
+                  </Border>
+                  <ContentPresenter Name="PART_ContentPresenter"
+                                    TextBlock.Foreground="{TemplateBinding Foreground}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    IsVisible="{TemplateBinding Content, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                    Grid.Column="1"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    
+    <Style Selector="CheckBox.Checker:checked">
+        <Setter Property="Foreground" Value="#ffffff" />
+    </Style>
+    
+    <Style Selector="CheckBox.Checker:checked /template/ Border">
+        <Setter Property="Background" Value="#419bf9" />
+        <Setter Property="BorderBrush" Value="#419bf9" />
+    </Style>
+    
+</Styles>

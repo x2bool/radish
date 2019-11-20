@@ -1,0 +1,57 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="TextBox.Input.Mini">
+        <Setter Property="Height" Value="18" />
+        <Setter Property="Padding" Value="2,1" />
+        <Setter Property="Margin" Value="0" />
+    </Style>
+    
+    <Style Selector="TextBox.Input">
+        <Setter Property="Padding" Value="4,2" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+    </Style>
+    
+    <Style Selector="TextBox.Input /template/ Border">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#b1b1b1" />
+                <GradientStop Offset="1" Color="#b3b3b3" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    
+    <Style Selector="TextBox.Editor /template/ Border">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#b1b1b1" />
+                <GradientStop Offset="1" Color="#b3b3b3" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    
+    <Style Selector="TextBox.Editor">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    
+    <Style Selector="Border.InputBorder">
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#b1b1b1" />
+                <GradientStop Offset="1" Color="#b3b3b3" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    
+</Styles>

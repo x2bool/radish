@@ -1,0 +1,9 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.Themes.BaseTheme">
+    
+    <!-- <StyleInclude Source="avares://Rbmk.Radish.Views/Themes/Base/IconStyles.xaml?assembly=Rbmk.Radish.Views" /> -->
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Base.IconStyles.xaml?assembly=Rbmk.Radish.Views" />
+    
+</Styles>

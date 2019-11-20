@@ -1,0 +1,58 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ResultViewer.ResultViewerControl"
+    xmlns:none1="clr-namespace:Rbmk.Radish.Views.ResultViewer.Projections.None"
+    xmlns:some1="clr-namespace:Rbmk.Radish.Views.ResultViewer.Projections.Some"
+    xmlns:none="clr-namespace:Rbmk.Radish.Model.ResultViewer.Projections.None;assembly=Rbmk.Radish.Model"
+    xmlns:some="clr-namespace:Rbmk.Radish.Model.ResultViewer.Projections.Some;assembly=Rbmk.Radish.Model">
+    
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="auto,*">
+    
+        <Border
+            Classes="TabTablet"
+            Grid.Row="0">
+            
+            <TabStrip
+                Classes="Tablet"
+                Items="{Binding ResultProjections}"
+                SelectedItem="{Binding ResultProjection, Mode=TwoWay}">
+            
+                <TabStrip.ItemTemplate>
+                    
+                    <DataTemplate>
+                        <Border>
+                            <TextBlock Text="{Binding Name}" />
+                        </Border>
+                    </DataTemplate>
+                    
+                </TabStrip.ItemTemplate>
+            
+            </TabStrip>
+            
+        </Border>
+    
+        <Carousel
+            Grid.Row="1"
+            Items="{Binding ResultProjections}"
+            SelectedItem="{Binding ResultProjection}">
+            
+            <Carousel.DataTemplates>
+                
+                <DataTemplate DataType="{x:Type none:NoneResultProjectionModel}">
+                    <none1:NoneResultProjectionControl/>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type some:SomeResultProjectionModel}">
+                    <some1:SomeResultProjectionControl/>
+                </DataTemplate>
+                
+            </Carousel.DataTemplates>
+            
+        </Carousel>
+        
+    </Grid>
+    
+</UserControl>

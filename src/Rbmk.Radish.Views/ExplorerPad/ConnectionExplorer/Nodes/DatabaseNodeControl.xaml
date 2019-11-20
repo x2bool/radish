@@ -1,0 +1,70 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer.Nodes.DatabaseNodeControl"
+    Padding="0,2">
+    
+    <Grid
+        RowDefinitions="auto"
+        ColumnDefinitions="auto,4,*">
+        
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            Classes="Icon"
+            Source="resm:Rbmk.Radish.Views.Icons.X32.Database.png" />
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            Text="{Binding Number}" />
+        
+        <Grid.ContextMenu>
+            <ContextMenu>
+                
+                <MenuItem
+                    Header="Activate Database"
+                    Command="{Binding ActivateCommand}">
+                    
+                    <MenuItem.Icon>
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Activate.png" />
+                    </MenuItem.Icon>
+                    
+                </MenuItem>
+                
+                <MenuItem
+                    Header="Commands"
+                    Items="{Binding MenuItems}">
+                    
+                    <MenuItem.Icon>
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Command.png" />
+                    </MenuItem.Icon>
+                    
+                    <MenuItem.Styles>
+                        <Style Selector="MenuItem">
+                            <Setter Property="Icon">
+                                <Template>
+                                    <Image
+                                        Classes="Icon"
+                                        Source="resm:Rbmk.Radish.Views.Icons.X32.Command.png" />
+                                </Template>
+                            </Setter>
+                            <Setter Property="Header" Value="{Binding Name}" />
+                            <!-- <Setter Property="Command" Value="{Binding SelectCommand}" /> -->
+                            <!-- <Setter Property="CommandParameter" Value="{Binding}" /> -->
+                        </Style>
+                    </MenuItem.Styles>
+                    
+                </MenuItem>
+                
+            </ContextMenu>
+        </Grid.ContextMenu>
+        
+    </Grid>
+    
+</UserControl>

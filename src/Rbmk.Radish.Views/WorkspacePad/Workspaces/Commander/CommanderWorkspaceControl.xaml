@@ -1,0 +1,43 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.WorkspacePad.Workspaces.Commander.CommanderWorkspaceControl"
+    xmlns:commandEditor="clr-namespace:Rbmk.Radish.Views.CommandEditor"
+    xmlns:resultViewer="clr-namespace:Rbmk.Radish.Views.ResultViewer"
+    xmlns:structViewer="clr-namespace:Rbmk.Radish.Views.StructViewer">
+    
+    <Grid
+        ColumnDefinitions="*,auto,*">
+        
+        <Grid
+            RowDefinitions="2*,auto,5*"
+            Grid.Column="0">
+            
+            <commandEditor:CommandEditorControl
+                DataContext="{Binding CommandEditor}"
+                Grid.Row="0"
+                Grid.Column="0" />
+        
+            <GridSplitter
+                Classes="Invisible"
+                Grid.Row="1"
+                Grid.Column="0" />
+        
+            <resultViewer:ResultViewerControl
+                DataContext="{Binding ResultViewer}"
+                Grid.Row="2"
+                Grid.Column="0" />
+            
+        </Grid>
+        
+        <GridSplitter
+            Classes="Resizer"
+            Grid.Column="1" />
+        
+        <structViewer:StructViewerControl
+            DataContext="{Binding StructViewer}"
+            Grid.Column="2" />
+        
+    </Grid>
+    
+</UserControl>

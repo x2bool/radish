@@ -1,0 +1,61 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ResultViewer.Projections.Some.SomeResultProjectionControl"
+    xmlns:some1="clr-namespace:Rbmk.Radish.Views.ResultViewer.Projections.Some"
+    xmlns:some="clr-namespace:Rbmk.Radish.Model.ResultViewer.Projections.Some;assembly=Rbmk.Radish.Model">
+    
+    <TreeView
+        BorderThickness="0"
+        Items="{Binding Nodes}"
+        SelectedItem="{Binding SelectedNode, Mode=TwoWay}">
+        
+        <TreeView.DataTemplates>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:StatusResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:StatusResultNodeControl />
+            </TreeDataTemplate>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:ErrorResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:ErrorResultNodeControl />
+            </TreeDataTemplate>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:KeyResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:KeyResultNodeControl />
+            </TreeDataTemplate>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:ValueResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:ValueResultNodeControl />
+            </TreeDataTemplate>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:ArrayResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:ArrayResultNodeControl />
+            </TreeDataTemplate>
+            
+            <TreeDataTemplate
+                DataType="{x:Type some:TransactionResultNodeModel}"
+                ItemsSource="{Binding Results}">
+                <some1:TransactionResultNodeControl />
+            </TreeDataTemplate>
+            
+        </TreeView.DataTemplates>
+        
+        <TreeView.Styles>
+            <Style Selector="TreeViewItem">
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+            </Style>
+        </TreeView.Styles>
+        
+    </TreeView>
+    
+</UserControl>

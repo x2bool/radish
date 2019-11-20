@@ -1,0 +1,24 @@
+﻿<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.SelectTargetDialog.Items.ConnectionItemControl">
+    
+    <Grid
+        RowDefinitions="auto"
+        ColumnDefinitions="auto,4,*">
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            Text="{Binding ConnectionName}" />
+        
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            Text="{Binding ConnectionString}" />
+        
+    </Grid>
+    
+</UserControl>

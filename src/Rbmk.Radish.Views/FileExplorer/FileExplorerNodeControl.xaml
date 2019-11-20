@@ -1,0 +1,22 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fileExplorer="clr-namespace:Rbmk.Radish.Views.FileExplorer">
+    
+    <UserControl.Resources>
+        <fileExplorer:PathConverter x:Key="PathConverter" />
+        <fileExplorer:FullPathConverter x:Key="FullPathConverter" />
+    </UserControl.Resources>
+    
+    <StackPanel Orientation="Horizontal">
+        
+        <TextBlock
+            Text="{Binding Path, Converter={StaticResource PathConverter}}" />
+        
+        <TextBlock
+            Text="{Binding Path, Converter={StaticResource FullPathConverter}}"
+            IsVisible="{Binding IsRoot}" />
+        
+    </StackPanel>
+    
+</UserControl>

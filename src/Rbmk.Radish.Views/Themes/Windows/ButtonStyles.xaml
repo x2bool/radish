@@ -1,0 +1,209 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="Button.Primary"> <!-- Primary -->
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#eaeaea" />
+                <GradientStop Offset="1" Color="#eaeaea" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#0078d7" />
+                <GradientStop Offset="1" Color="#0078d7" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Primary TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#222222" />
+        <Setter Property="Margin" Value="16,0" />
+    </Style>
+    
+    <Style Selector="Button.Primary /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Secondary"> <!-- Secondary -->
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#eaeaea" />
+                <GradientStop Offset="1" Color="#eaeaea" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#adadad" />
+                <GradientStop Offset="1" Color="#adadad" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Secondary.ImageButton">
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#fbfbfb" />
+                <GradientStop Offset="1" Color="#fbfbfb" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#c9c9c9" />
+                <GradientStop Offset="1" Color="#c9c9c9" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+    </Style>
+    
+    <Style Selector="Button.Secondary TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#222222" />
+        <Setter Property="Margin" Value="16,0" />
+    </Style>
+    
+    <Style Selector="Button.Secondary.ImageButton > Image.Icon">
+        <Setter Property="Margin" Value="4,0" />
+    </Style>
+    
+    <Style Selector="Button.Secondary /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary"> <!-- Toggle -->
+        
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#fbfbfb" />
+                <GradientStop Offset="1" Color="#fbfbfb" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#c9c9c9" />
+                <GradientStop Offset="1" Color="#c9c9c9" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+        
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="0" />
+        
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary:checked /template/ ContentPresenter">
+        
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#cbe8f6" />
+                <GradientStop Offset="1" Color="#cbe8f6" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#26a0da" />
+        
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary:pressed /template/ ContentPresenter">
+        
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#cbe8f6" />
+                <GradientStop Offset="1" Color="#cbe8f6" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#26a0da" />
+        
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary > TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#272727" />
+        <Setter Property="Margin" Value="16,0" />
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary > Image.Icon">
+        <Setter Property="Margin" Value="4,0" />
+    </Style>
+    
+    <Style Selector="ToggleButton.Secondary /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Badge"> <!-- Badge -->
+        <Setter Property="Background" Value="#e3e5e7" />
+        <Setter Property="BorderBrush" Value="#cbccce" />
+        <!-- <Setter Property="Height" Value="20" /> -->
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Badge > TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#444444" />
+        <Setter Property="Margin" Value="10,0" />
+    </Style>
+    
+    <Style Selector="Button.Badge /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="2" />
+    </Style>
+    
+    <Style Selector="Button.Informer"> <!-- Informer -->
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#fbfbfb" />
+                <GradientStop Offset="1" Color="#fbfbfb" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#c9c9c9" />
+                <GradientStop Offset="1" Color="#c9c9c9" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="4,0" />
+    </Style>
+    
+    <Style Selector="Button.Informer TextBlock">
+        <Setter Property="Foreground" Value="#444444" />
+    </Style>
+    
+    <Style Selector="Button.Informer /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.PlaceHolder"> <!-- PlaceHolder -->
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="1,4,1,4" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    
+    <Style Selector="Button.PlaceHolder > TextBlock">
+        <Setter Property="Foreground" Value="Transparent" />
+        <Setter Property="Margin" Value="16,0" />
+    </Style>
+    
+    <Style Selector="Button.Link"> <!-- Link -->
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    
+    <Style Selector="Button.Link > TextBlock">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#126edb" />
+        <Setter Property="Margin" Value="0,2,0,0" />
+    </Style>
+    
+</Styles>

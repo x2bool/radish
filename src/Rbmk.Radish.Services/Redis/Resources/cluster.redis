@@ -1,0 +1,83 @@
+CLUSTER ADDSLOTS slot [slot ...]
+summary: Assign new hash slots to receiving node
+since: 3.0.0
+
+CLUSTER COUNT-FAILURE-REPORTS node-id
+summary: Return the number of failure reports active for a given node
+since: 3.0.0
+
+CLUSTER COUNTKEYSINSLOT slot
+summary: Return the number of local keys in the specified hash slot
+since: 3.0.0
+
+CLUSTER DELSLOTS slot [slot ...]
+summary: Set hash slots as unbound in receiving node
+since: 3.0.0
+
+CLUSTER FAILOVER [FORCE|TAKEOVER]
+summary: Forces a replica to perform a manual failover of its master.
+since: 3.0.0
+
+CLUSTER FORGET node-id
+summary: Remove a node from the nodes table
+since: 3.0.0
+
+CLUSTER GETKEYSINSLOT slot count
+summary: Return local key names in the specified hash slot
+since: 3.0.0
+
+CLUSTER INFO -
+summary: Provides info about Redis Cluster node state
+since: 3.0.0
+
+CLUSTER KEYSLOT key
+summary: Returns the hash slot of the specified key
+since: 3.0.0
+
+CLUSTER MEET ip port
+summary: Force a node cluster to handshake with another node
+since: 3.0.0
+
+CLUSTER NODES -
+summary: Get Cluster config for the node
+since: 3.0.0
+
+CLUSTER REPLICAS node-id
+summary: List replica nodes of the specified master node
+since: 5.0.0
+
+CLUSTER REPLICATE node-id
+summary: Reconfigure a node as a replica of the specified master node
+since: 3.0.0
+
+CLUSTER RESET [HARD|SOFT]
+summary: Reset a Redis Cluster node
+since: 3.0.0
+
+CLUSTER SAVECONFIG -
+summary: Forces the node to save cluster state on disk
+since: 3.0.0
+
+CLUSTER SET-CONFIG-EPOCH config-epoch
+summary: Set the configuration epoch in a new node
+since: 3.0.0
+
+CLUSTER SETSLOT slot IMPORTING|MIGRATING|STABLE|NODE [node-id]
+summary: Bind a hash slot to a specific node
+since: 3.0.0
+
+CLUSTER SLAVES node-id
+summary: List replica nodes of the specified master node
+since: 3.0.0
+
+CLUSTER SLOTS -
+summary: Get array of Cluster slot to node mappings
+since: 3.0.0
+
+READONLY -
+summary: Enables read queries for a connection to a cluster replica node
+since: 3.0.0
+
+READWRITE -
+summary: Disables read queries for a connection to a cluster replica node
+since: 3.0.0

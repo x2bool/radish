@@ -1,0 +1,25 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="AutoCompleteBox.Suggest">
+        <Setter Property="Padding" Value="4,2" />
+    </Style>
+    
+    <Style Selector="AutoCompleteBox.Suggest /template/ TextBox">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#b1b1b1" />
+                <GradientStop Offset="1" Color="#b3b3b3" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    
+    <Style Selector="AutoCompleteBox.Suggest /template/ TextBox /template/ Border">
+        <Setter Property="CornerRadius" Value="2" />
+    </Style>
+    
+</Styles>

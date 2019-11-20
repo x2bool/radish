@@ -1,0 +1,120 @@
+﻿<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.SelectTargetDialog.SelectTargetDialogWindow"
+    xmlns:items="clr-namespace:Rbmk.Radish.Views.SelectTargetDialog.Items"
+    Icon="resm:Rbmk.Radish.Views.Icons.radish.png"
+    WindowStartupLocation="CenterOwner"
+    Width="420"
+    Height="320"
+    MinWidth="420"
+    MinHeight="320"
+    MaxWidth="420"
+    MaxHeight="320"
+    Classes="Dialog"
+    Title="Select server or database"
+    Padding="14,12">
+    
+    <Grid
+        Classes="ConnectDialog"
+        ColumnDefinitions="auto,8,*"
+        RowDefinitions="auto,8,*,14,auto">
+        
+        <TextBlock
+            VerticalAlignment="Center"
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Connection:" />
+        
+        <ComboBox
+            Height="22"
+            Grid.Row="0"
+            Grid.Column="2"
+            Classes="Picker"
+            Items="{Binding Connections}"
+            SelectedItem="{Binding SelectedConnection}">
+        
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <items:ConnectionItemControl />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        
+        </ComboBox>
+        
+        <Grid
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            ColumnDefinitions="*,4,*">
+            
+            <ListBox
+                Grid.Column="0"
+                SelectedItem="{Binding SelectedDatabase}"
+                Items="{Binding Databases}">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <items:DatabaseItemControl />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+            
+            <ListBox
+                Grid.Column="2"
+                SelectedItem="{Binding SelectedServer}"
+                Items="{Binding Servers}">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <items:ServerItemControl />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+            
+        </Grid>
+        
+        <StackPanel
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            
+            <Button
+                Classes="Secondary MacosOnly"
+                Command="{Binding CancelCommand}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Cancel" />
+            </Button>
+    
+            <Button
+                Classes="Primary MacosOnly"
+                Command="{Binding SelectCommand}"
+                CommandParameter="{Binding ConnectionString}">
+                <TextBlock
+                    Text="Select" />
+            </Button>
+    
+            <Button
+                Classes="Primary WindowsOnly"
+                Command="{Binding SelectCommand}"
+                CommandParameter="{Binding ConnectionString}"
+                Margin="0,0,6,0">
+                <TextBlock
+                    Text="Select" />
+            </Button>
+            
+            <Button
+                Classes="Secondary WindowsOnly"
+                Command="{Binding CancelCommand}">
+                <TextBlock
+                    Text="Cancel" />
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</Window>

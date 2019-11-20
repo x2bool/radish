@@ -1,0 +1,128 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.WorkspacePad.WorkspacePadControl"
+    xmlns:commander="clr-namespace:Rbmk.Radish.Views.WorkspacePad.Workspaces.Commander"
+    xmlns:workspaces="clr-namespace:Rbmk.Radish.Views.WorkspacePad.Workspaces">
+    
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="auto,*">
+    
+        <Border
+            Grid.Row="0"
+            Classes="TabMain">
+        
+            <Grid
+                ColumnDefinitions="auto,*,auto"
+                RowDefinitions="auto">
+                
+                <StackPanel
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    IsVisible="{Binding IsTabStripScrollable}">
+                    
+                    <Button
+                        Classes="TabScrollButton"
+                        Command="{Binding ScrollLeftCommand}">
+                        <Image
+                            Width="10"
+                            Height="10"
+                            Opacity="0.6"
+                            Source="resm:Rbmk.Radish.Views.Icons.X24.ChevronLeft.png" />
+                    </Button>
+                    
+                </StackPanel>
+                
+                <ScrollViewer
+                    Name="TabScroller"
+                    Grid.Column="1">
+                    
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <TabStrip
+                            Classes="Main"
+                            Items="{Binding Workspaces}"
+                            SelectedItem="{Binding SelectedWorkspace, Mode=TwoWay}">
+                            
+                            <TabStrip.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </TabStrip.ItemsPanel>
+                            
+                            <TabStrip.ItemTemplate>
+                                <DataTemplate>
+                                
+                                    <workspaces:WorkspaceTabControl />
+                                
+                                </DataTemplate>
+                            </TabStrip.ItemTemplate>
+                    
+                        </TabStrip>
+                        
+                        <Button
+                            IsVisible="{Binding !IsTabStripScrollable}"
+                            Classes="TabAddButton"
+                            Command="{Binding OpenCommand}">
+                            <Image
+                                Width="12"
+                                Height="12"
+                                Opacity="0.6"
+                                Source="resm:Rbmk.Radish.Views.Icons.X24.Plus.png" />
+                        </Button>
+                        
+                    </StackPanel>
+                    
+                </ScrollViewer>
+            
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="-1,0,0,0"
+                    Grid.Column="2"
+                    IsVisible="{Binding IsTabStripScrollable}">
+                    
+                    <Button
+                        Classes="TabScrollButton"
+                        Command="{Binding ScrollRightCommand}">
+                        <Image
+                            Width="10"
+                            Height="10"
+                            Opacity="0.6"
+                            Source="resm:Rbmk.Radish.Views.Icons.X24.ChevronRight.png" />
+                    </Button>
+                    
+                    <Button
+                        Classes="TabAddButton"
+                        Command="{Binding OpenCommand}">
+                        <Image
+                            Width="12"
+                            Height="12"
+                            Opacity="0.6"
+                            Source="resm:Rbmk.Radish.Views.Icons.X24.Plus.png" />
+                    </Button>
+                    
+                </StackPanel>
+            
+            </Grid>
+        
+        </Border>
+        
+        <Carousel
+            Grid.Row="1"
+            Items="{Binding Workspaces}"
+            SelectedItem="{Binding SelectedWorkspace}">
+            
+            <Carousel.ItemTemplate>
+                <DataTemplate>
+                    
+                    <commander:CommanderWorkspaceControl />
+                    
+                </DataTemplate>
+            </Carousel.ItemTemplate>
+            
+        </Carousel>
+        
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,149 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.StructViewer.Projections.Lists.ListStructProjectionControl"
+    xmlns:lists="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.Lists">
+    
+    <Grid
+        RowDefinitions="auto,*">
+        
+        <Border
+            Height="34"
+            Classes="ToolingPanel"
+            Grid.Row="0">
+            
+            <Panel
+                Margin="6">
+                
+                <Grid
+                    IsVisible="{Binding !AreActionsVisible}"
+                    ColumnDefinitions="auto,6,auto,*,auto,6,auto,6,auto">
+                    
+                    <Button
+                        Classes="Secondary"
+                        Grid.Column="0">
+                        <TextBlock
+                            Text="{Binding BadgeText}" />
+                    </Button>
+                    
+                    <Button
+                        Classes="Secondary ImageButton"
+                        Grid.Column="2"
+                        Command="{Binding AddCommand}">
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Add.png" />
+                    </Button>
+                
+                    <TextBox
+                        Width="60"
+                        Classes="Input"
+                        Text="{Binding StartIndex, Mode=TwoWay}"
+                        Grid.Column="4" />
+                
+                    <TextBox
+                        Width="60"
+                        Classes="Input"
+                        Text="{Binding StopIndex, Mode=TwoWay}"
+                        Grid.Column="6" />
+                
+                    <Button
+                        Width="80"
+                        Classes="Secondary"
+                        Grid.Column="8"
+                        Command="{Binding RangeCommand}"
+                        CommandParameter="{Binding Range}">
+                        <TextBlock
+                            Text="Range" />
+                    </Button>
+                
+                </Grid>
+                
+                <Grid
+                    IsVisible="{Binding AreActionsVisible}"
+                    ColumnDefinitions="auto,6,auto,6,auto,*,auto">
+                    
+                    <Button
+                        Classes="Secondary"
+                        Grid.Column="0">
+                        <TextBlock
+                            Text="{Binding BadgeText}" />
+                    </Button>
+                    
+                    <Button
+                        Classes="Secondary ImageButton"
+                        Grid.Column="2"
+                        Command="{Binding DeleteCommand}">
+                        <Image
+                            Classes="Icon"
+                            Source="resm:Rbmk.Radish.Views.Icons.X32.Remove.png" />
+                    </Button>
+                    
+                    <!-- <Button -->
+                    <!--     Classes="Secondary" -->
+                    <!--     Grid.Column="4" -->
+                    <!--     Command="{Binding EditCommand}"> -->
+                    <!--     <Image -->
+                    <!--         Classes="Icon" -->
+                    <!--         Source="resm:Rbmk.Radish.Views.Icons.X32.Edit.png" /> -->
+                    <!-- </Button> -->
+                    
+                    <Button
+                        Width="80"
+                        Classes="Secondary"
+                        Grid.Column="6"
+                        Command="{Binding CancelCommand}">
+                        <TextBlock
+                            Text="Cancel" />
+                    </Button>
+                    
+                </Grid>
+                
+            </Panel>
+            
+        </Border>
+    
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="1">
+        
+            <Grid
+                ColumnDefinitions="24,150,*"
+                RowDefinitions="24">
+        
+                <Border
+                    Grid.Column="0"
+                    Classes="GridHeaderCell">
+                </Border>
+        
+                <Border 
+                    Grid.Column="1"
+                    Classes="GridHeaderCell">
+                    <TextBlock Text="Index" />
+                </Border>
+        
+                <Border 
+                    Grid.Column="2"
+                    Classes="GridHeaderCell">
+                    <TextBlock Text="Value" />
+                </Border>
+        
+            </Grid>
+            
+            <ListBox
+                Classes="Grid"
+                Items="{Binding ListItems}">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <lists:ListStructItemControl />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,71 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.Notifications.NotificationControl">
+    
+    <Grid
+        IsVisible="{Binding IsVisible}"
+        RowDefinitions="*,auto,12"
+        ColumnDefinitions="*,auto,12">
+        
+        <Button
+            DataContext="{Binding NotificationContext}"
+            Command="{Binding DefaultCommand}"
+            Classes="Notification"
+            Grid.Column="1"
+            Grid.Row="1">
+            
+            <Grid
+                RowDefinitions="auto,auto,*"
+                ColumnDefinitions="auto,*,auto">
+                
+                <Image
+                    Classes="NotificationIcon"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="3"
+                    Source="{Binding Icon}" />
+                
+                <TextBlock
+                    Classes="NotificationTitle"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Title}" />
+                
+                <TextBlock
+                    Classes="NotificationText"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Text}" />
+                
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.RowSpan="3"
+                    RowDefinitions="*,*">
+                    
+                    <Button
+                        Classes="NotificationTopButton"
+                        Grid.Row="0"
+                        Command="{Binding CancelCommand}">
+                        <TextBlock
+                            Text="{Binding CancelText}" />
+                    </Button>
+                    
+                    <Button
+                        Classes="NotificationBottomButton"
+                        Grid.Row="1"
+                        Command="{Binding OkCommand}">
+                        <TextBlock
+                            Text="{Binding OkText}" />
+                    </Button>
+                    
+                </Grid>
+                
+            </Grid>
+            
+        </Button>
+        
+    </Grid>
+    
+</UserControl>

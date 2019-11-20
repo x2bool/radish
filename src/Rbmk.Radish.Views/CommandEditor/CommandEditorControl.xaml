@@ -1,0 +1,133 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.CommandEditor.CommandEditorControl"
+    xmlns:avaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit">
+    
+    <Grid
+        RowDefinitions="auto,*">
+        
+        <Border
+            Grid.Row="0"
+            Height="34"
+            Classes="ToolingPanel">
+            
+            <Grid
+                Margin="6"
+                ColumnDefinitions="auto,6,*,6,auto">
+                
+                <ToggleButton
+                    IsChecked="{Binding IsQuickAccessEnabled}"
+                    Grid.Column="0"
+                    Classes="Secondary">
+                    <Image
+                        Classes="Icon"
+                        Source="resm:Rbmk.Radish.Views.Icons.X32.Quick.png" />
+                </ToggleButton>
+                
+                <Button
+                    IsVisible="{Binding !IsQuickAccessEnabled}"
+                    Grid.Column="2"
+                    Classes="Informer"
+                    VerticalAlignment="Center"
+                    Command="{Binding SelectTargetCommand}"
+                    HorizontalContentAlignment="Left">
+                    
+                    <Grid
+                        Margin="4,0"
+                        ColumnDefinitions="auto,8,auto,8,*">
+                        
+                        <TextBlock
+                            Grid.Column="0"
+                            IsVisible="{Binding !IsConnectionTargetSelected}"
+                            Text="Select server or database..." />
+                        
+                        <TextBlock
+                            Grid.Column="0"
+                            IsVisible="{Binding IsConnectionTargetSelected}"
+                            Text="{Binding SelectedConnectionTarget.ConnectionName}" />
+                        
+                        <Rectangle
+                            Grid.Column="2"
+                            Height="14"
+                            Width="1"
+                            Fill="#aaaaaa"
+                            IsVisible="{Binding IsServerTargetSelected}" />
+                        
+                        <Rectangle
+                            Grid.Column="2"
+                            Height="14"
+                            Width="1"
+                            Fill="#aaaaaa"
+                            IsVisible="{Binding IsDatabaseTargetSelected}" />
+                        
+                        <TextBlock
+                            Grid.Column="4"
+                            FontWeight="Bold"
+                            IsVisible="{Binding IsServerTargetSelected}"
+                            Text="{Binding SelectedServerTarget.Address}" />
+                        
+                        <TextBlock
+                            Grid.Column="4"
+                            FontWeight="Bold"
+                            IsVisible="{Binding IsDatabaseTargetSelected}"
+                            Text="{Binding SelectedDatabaseTarget.Number}" />
+                        
+                    </Grid>
+                    
+                </Button>
+                
+                <AutoCompleteBox
+                    Name="QuickAccess"
+                    IsVisible="{Binding IsQuickAccessEnabled}"
+                    Items="{Binding QuickAccessItems}"
+                    Classes="Suggest"
+                    Watermark="Start typing key…"
+                    Grid.Column="2">
+                    <AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" />
+                        </DataTemplate>
+                    </AutoCompleteBox.ItemTemplate>
+                </AutoCompleteBox>
+                
+                <Button
+                    Classes="Primary"
+                    Width="80"
+                    IsVisible="{Binding !IsQuickAccessEnabled}"
+                    Grid.Column="4"
+                    CommandParameter="{Binding CommandText}"
+                    Command="{Binding ExecuteCommand}">
+                    <TextBlock
+                        Text="Execute" />
+                </Button>
+                
+                <Button
+                    Classes="Primary"
+                    Width="80"
+                    IsVisible="{Binding IsQuickAccessEnabled}"
+                    Grid.Column="4"
+                    Command="{Binding ExploreCommand}">
+                    <TextBlock
+                        Text="Explore" />
+                </Button>
+                
+            </Grid>
+            
+        </Border>
+        
+        <Border
+            Grid.Row="1">
+            
+            <avaloniaEdit:TextEditor
+                IsEnabled="{Binding !IsQuickAccessEnabled}"
+                Name="CommandEditor"
+                Classes="CommandEditor"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto" />
+            
+        </Border>
+        
+    </Grid>
+    
+</UserControl>

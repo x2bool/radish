@@ -1,0 +1,20 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.Themes.WindowsTheme">
+    
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.SharedStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.CheckBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.ButtonStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.NotificationStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.DataGridStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.GridSplitterStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.ProgressBarStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.ComboBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.TextBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.TextEditorStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.TabStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.GridStyles.xaml?assembly=Rbmk.Radish.Views" />
+    <StyleInclude Source="resm:Rbmk.Radish.Views.Themes.Windows.AutoCompleteBoxStyles.xaml?assembly=Rbmk.Radish.Views" />
+
+</Styles>

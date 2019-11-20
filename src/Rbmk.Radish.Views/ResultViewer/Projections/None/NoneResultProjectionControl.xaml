@@ -1,0 +1,13 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ResultViewer.Projections.None.NoneResultProjectionControl">
+    
+    <TextBlock
+        Classes="Placeholder"
+        Margin="0,0,0,80"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Text="Execute command to get result" />
+    
+</UserControl>

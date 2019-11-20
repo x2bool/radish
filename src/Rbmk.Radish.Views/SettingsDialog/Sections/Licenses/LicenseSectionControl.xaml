@@ -1,0 +1,40 @@
+﻿<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:license="clr-namespace:Rbmk.Radish.Model.SettingsDialog.Sections.Licenses;assembly=Rbmk.Radish.Model"
+    xmlns:license1="clr-namespace:Rbmk.Radish.Views.SettingsDialog.Sections.Licenses"
+    x:Class="Rbmk.Radish.Views.SettingsDialog.Sections.Licenses.LicenseSectionControl">
+    
+    <Grid
+        ColumnDefinitions="auto,*"
+        RowDefinitions="6,auto,6,auto,*">
+        
+        <TextBlock
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            IsVisible="{Binding HasTrialLicense}"
+            Text="{Binding LicenseText}" />
+        
+        <TextBlock
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            IsVisible="{Binding HasLicense}"
+            Text="{Binding LicenseText}" />
+        
+        <TextBlock
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            IsVisible="{Binding HasNoLicense}"
+            Text="{Binding LicenseText}" />
+        
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Classes="Secondary"
+            Command="{Binding ChangeLicenseCommand}">
+            <TextBlock Text="Change…" />
+        </Button>
+        
+    </Grid>
+    
+</Window>

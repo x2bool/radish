@@ -1,0 +1,6 @@
+[submodule "ext/csredis"]
+	path = ext/csredis
+	url = https://github.com/rbmkio/csredis
+[submodule "ext/AvaloniaEdit"]
+	path = ext/AvaloniaEdit
+	url = https://github.com/AvaloniaUI/AvaloniaEdit

@@ -1,0 +1,68 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="ListBox.Grid">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    
+    <Style Selector="ListBox.Grid ListBoxItem">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    
+    <Style Selector="ListBox.Grid ListBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="ListBox.Grid ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="ListBox.Grid ListBoxItem:selected:focus /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="ListBox.Grid ListBoxItem:selected:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style Selector="ListBox.Grid ListBoxItem:selected:focus:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="Border.GridCell">
+        <Setter Property="BorderThickness" Value="0,0,1,1" />
+        <Setter Property="BorderBrush" Value="#e5e5e5" />
+    </Style>
+    
+    <Style Selector="Border.GridCell TextBox">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+    </Style>
+    
+    <Style Selector="Border.GridHeaderCell">
+        <Setter Property="BorderThickness" Value="0,0,1,1" />
+        <Setter Property="BorderBrush" Value="#e5e5e5" />
+        <Setter Property="Background" Value="#f5f5f5" />
+    </Style>
+    
+    <Style Selector="Border.GridHeaderCell TextBlock">
+        <Setter Property="Margin" Value="4,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <Style Selector="Border.GridDeleted">
+        <Setter Property="Background" Value="#f7cdd1" />
+    </Style>
+    
+    <Style Selector="Border.GridDisabled">
+        <Setter Property="Background" Value="#f5f5f5" />
+    </Style>
+    
+</Styles>

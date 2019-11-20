@@ -1,0 +1,44 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.StructViewer.Projections.None.NoneStructProjectionControl">
+    
+    <Grid
+        RowDefinitions="auto,*">
+        
+        <Border
+            Height="34"
+            Classes="ToolingPanel"
+            Grid.Row="0">
+            
+            <Grid
+                Margin="6"
+                ColumnDefinitions="auto">
+                
+                <Button
+                    IsEnabled="False"
+                    Classes="Secondary"
+                    Grid.Column="0">
+                    <TextBlock
+                        Text="No Data" />
+                </Button>
+                
+            </Grid>
+            
+        </Border>
+    
+        <Border
+            Grid.Row="1">
+        
+            <TextBlock
+                Classes="Placeholder"
+                Margin="0,0,0,120"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="Select key to explore data" />
+        
+        </Border>
+        
+    </Grid>
+    
+</UserControl>

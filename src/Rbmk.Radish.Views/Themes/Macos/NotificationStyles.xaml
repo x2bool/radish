@@ -1,0 +1,69 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="Button.Notification">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0" Color="#fdfdfd"/>
+                    <GradientStop Offset="1" Color="#f2f2f2"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#15000000" />
+                <GradientStop Offset="1" Color="#25000000" />
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.Notification /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+    
+    <Style Selector="Button.Notification TextBlock">
+        <Setter Property="Foreground" Value="#555555" />
+    </Style>
+    
+    <Style Selector="Image.NotificationIcon">
+        <Setter Property="Margin" Value="8" />
+        <Setter Property="Width" Value="48" />
+        <Setter Property="Height" Value="48" />
+    </Style>
+    
+    <Style Selector="Button.NotificationTopButton">
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1,0,0,1" />
+        <Setter Property="BorderBrush" Value="#20000000" />
+    </Style>
+    
+    <Style Selector="Button.NotificationTopButton /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0,5,0,0" />
+    </Style>
+    
+    <Style Selector="Button.NotificationBottomButton">
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1,0,0,0" />
+        <Setter Property="BorderBrush" Value="#20000000" />
+    </Style>
+    
+    <Style Selector="Button.NotificationBottomButton /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="0,0,5,0" />
+    </Style>
+    
+    <Style Selector="TextBlock.NotificationTitle">
+        <Setter Property="Margin" Value="0,8,12,2" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    
+    <Style Selector="TextBlock.NotificationText">
+        <Setter Property="Margin" Value="0,2,12,8" />
+    </Style>
+    
+</Styles>

@@ -1,0 +1,52 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.StructViewer.StructViewerControl"
+    xmlns:none1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.None"
+    xmlns:hashes1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.Hashes"
+    xmlns:lists1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.Lists"
+    xmlns:sets1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.Sets"
+    xmlns:strings1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.Strings"
+    xmlns:zSets1="clr-namespace:Rbmk.Radish.Views.StructViewer.Projections.ZSets"
+    xmlns:none="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.None;assembly=Rbmk.Radish.Model"
+    xmlns:hashes="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.Hashes;assembly=Rbmk.Radish.Model"
+    xmlns:lists="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.Lists;assembly=Rbmk.Radish.Model"
+    xmlns:sets="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.Sets;assembly=Rbmk.Radish.Model"
+    xmlns:strings="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.Strings;assembly=Rbmk.Radish.Model"
+    xmlns:zSets="clr-namespace:Rbmk.Radish.Model.StructViewer.Projections.ZSets;assembly=Rbmk.Radish.Model">
+    
+    <Carousel
+        Items="{Binding StructProjections}"
+        SelectedItem="{Binding SelectedStructProjection}">
+            
+        <Carousel.DataTemplates>
+                
+            <DataTemplate DataType="{x:Type none:NoneStructProjectionModel}">
+                <none1:NoneStructProjectionControl />
+            </DataTemplate>
+                
+            <DataTemplate DataType="{x:Type hashes:HashStructProjectionModel}">
+                <hashes1:HashStructProjectionControl />
+            </DataTemplate>
+                
+            <DataTemplate DataType="{x:Type lists:ListStructProjectionModel}">
+                <lists1:ListStructProjectionControl />
+            </DataTemplate>
+                
+            <DataTemplate DataType="{x:Type sets:SetStructProjectionModel}">
+                <sets1:SetStructProjectionControl />
+            </DataTemplate>
+                
+            <DataTemplate DataType="{x:Type strings:StringStructProjectionModel}">
+                <strings1:StringStructProjectionControl />
+            </DataTemplate>
+                
+            <DataTemplate DataType="{x:Type zSets:ZSetStructProjectionModel}">
+                <zSets1:ZSetStructProjectionControl />
+            </DataTemplate>
+                
+        </Carousel.DataTemplates>
+            
+    </Carousel>
+    
+</UserControl>

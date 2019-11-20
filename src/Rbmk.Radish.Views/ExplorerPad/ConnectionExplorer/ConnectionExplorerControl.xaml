@@ -1,0 +1,69 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer.ConnectionExplorerControl"
+    xmlns:nodes="clr-namespace:Rbmk.Radish.Views.ExplorerPad.ConnectionExplorer.Nodes"
+    xmlns:models="clr-namespace:Rbmk.Radish.Model.ExplorerPad.ConnectionExplorer.Nodes;assembly=Rbmk.Radish.Model">
+    
+    <Grid
+        RowDefinitions="*"
+        ColumnDefinitions="*">
+        
+        <TreeView
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderThickness="0"
+            Items="{Binding Items}"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            
+            <TreeView.DataTemplates>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:NewConnectionNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:NewConnectionNodeControl />
+                </TreeDataTemplate>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:ConnectionNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:ConnectionNodeControl />
+                </TreeDataTemplate>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:DatabaseNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:DatabaseNodeControl />
+                </TreeDataTemplate>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:ServerNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:ServerNodeControl />
+                </TreeDataTemplate>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:DatabaseGroupNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:DatabaseGroupNodeControl />
+                </TreeDataTemplate>
+                
+                <TreeDataTemplate
+                    DataType="{x:Type models:ServerGroupNodeModel}"
+                    ItemsSource="{Binding Items}">
+                    <nodes:ServerGroupNodeControl />
+                </TreeDataTemplate>
+                
+            </TreeView.DataTemplates>
+            
+            <TreeView.Styles>
+                <Style Selector="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                </Style>
+            </TreeView.Styles>
+            
+        </TreeView>
+        
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,158 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Rbmk.Radish.Views.Converters;assembly=Rbmk.Radish.Views">
+    
+    <Styles.Resources>
+        <converters:NegateConverter x:Key="NegateConverter" />
+    </Styles.Resources>
+    
+    <!-- Pane -->
+    
+    <Style Selector="UserControl.Pane">
+        <Setter Property="Background" Value="#e3e4e6" />
+    </Style>
+    
+    <!-- TreeView -->
+    <Style Selector="TreeView">
+        <Setter Property="Padding" Value="0,4" />
+    </Style>
+    
+    <Style Selector="TreeViewItem /template/ Border">
+        <Setter Property="Padding" Value="4,0" />
+    </Style>
+    
+    <Style Selector="TreeViewItem:selected /template/ Border">
+        <Setter Property="Background" Value="#20000000" />
+    </Style>
+    
+    <!-- Font -->
+    
+    <Style Selector="TextBlock">
+        <Setter Property="FontFamily" Value="avares://Rbmk.Radish.Views/Fonts/SanFrancisco#SF Pro Display" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#272727" />
+    </Style>
+    
+    <Style Selector="TextBlock.Placeholder">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Thin" />
+        <Setter Property="Foreground" Value="#bbbbbb" />
+    </Style>
+    
+    <Style Selector="TextBox">
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    
+    <Style Selector="TextBlock.Error">
+        <Setter Property="Foreground" Value="#aa0000" />
+    </Style>
+    
+    <!-- Panel -->
+    
+    <Style Selector="Border.ControlPanel">
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Background" Value="#c2c2c2" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="BorderBrush" Value="#adaeae" />
+    </Style>
+    
+    <Style Selector="Border.ToolingPanel">
+        <Setter Property="Background" Value="#fdfdfd" />
+        <Setter Property="BorderBrush" Value="#e5e5e5" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+    </Style>
+    
+    <Style Selector="Border.ExplorerPanel">
+        <Setter Property="Background" Value="#e3e4e6" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    
+    <!-- NavigationPanel -->
+    
+    <Style Selector="Border.NavigationPanel">
+        
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0" Color="#eeeeee"/>
+                    <GradientStop Offset="1" Color="#f3f3f3"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Setter>
+        
+        <Setter Property="BorderBrush" Value="#dddddd" />
+        
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStrip">
+        
+        <Setter Property="Margin" Value="5,0" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStripItem">
+        
+        <Setter Property="Padding" Value="4,3,4,2" />
+        <Setter Property="Margin" Value="3,3,3,2" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStripItem /template/ ContentPresenter">
+        
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="4" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStripItem:selected /template/ ContentPresenter">
+        
+        <Setter Property="Background" Value="#808080" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStripItem TextBlock">
+        
+        <Setter Property="Foreground" Value="#444444" />
+        
+    </Style>
+    
+    <Style Selector="Border.NavigationPanel TabStripItem:selected TextBlock">
+        
+        <Setter Property="Foreground" Value="#ffffff" />
+        
+    </Style>
+    
+    <!-- Dialogs -->
+    
+    <Style Selector="Window.Basic">
+        <Setter Property="Background" Value="#eeeeee" />
+    </Style>
+    
+    <Style Selector="Window.Dialog">
+        <Setter Property="Background" Value="#eeeeee" />
+    </Style>
+    
+    <Style Selector="Image.DialogIcon">
+        <Setter Property="Width" Value="48" />
+        <Setter Property="Height" Value="48" />
+    </Style>
+    
+    <Style Selector="TextBlock.DialogTitle">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    
+    <!-- Platform -->
+    
+    <Style Selector=":is(Control).MacosOnly">
+        <Setter Property="IsVisible" Value="True" />
+    </Style>
+    
+    <Style Selector=":is(Control).WindowsOnly">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    
+</Styles>

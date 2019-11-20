@@ -1,0 +1,46 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="TextBox.Input">
+        <Setter Property="Height" Value="22" />
+        <Setter Property="Padding" Value="4,2" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+    </Style>
+    
+    <Style Selector="TextBox.Input /template/ Border">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#ffffff" />
+                <GradientStop Offset="1" Color="#ffffff" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#c9c9c9" />
+                <GradientStop Offset="1" Color="#c9c9c9" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+    </Style>
+    
+    <Style Selector="Border.InputBorder">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#ffffff" />
+                <GradientStop Offset="1" Color="#ffffff" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                <GradientStop Offset="0" Color="#c9c9c9" />
+                <GradientStop Offset="1" Color="#c9c9c9" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0.5" />
+    </Style>
+    
+</Styles>
